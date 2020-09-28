@@ -1,0 +1,42 @@
+@import '../node_modules/hamburgers/dist/hamburgers.min.css';
+
+.header{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 50px 25px;
+    &__logo{
+        color: white;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        justify-self: center;
+        align-self: center;
+    }
+}
+
+.hamburger-inner, .hamburger-inner::before,.hamburger-inner::after {
+    background-color: white;
+}
+
+.header__mobile-menu{
+    display: none;
+    grid-column: 2/-1;
+    list-style-type: none;
+    align-self: center;
+    &__item{
+        margin-right: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+.header.is-active {
+    background-color: white;
+    .header__logo{
+        display: none;
+    }
+    .header__mobile-menu{
+        display: flex;
+    }
+}
+
